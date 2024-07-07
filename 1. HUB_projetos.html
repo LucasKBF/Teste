@@ -1,0 +1,67 @@
+<body background-image="C:\lucas\fundo.jpg">
+<script>
+
+document.write("<font color=\"red\"><h1><b>HUB dos projetos</b></h1></font>")
+var x=1
+var y
+var tabuada
+var IMC
+var RNG
+document.write ("<b><h2>Selecione projeto:</h2></b>")
+document.write ("<select id=\"escolher\" name=\"escolher\">")
+document.write ("    <option value=\"tabuada\">Tabuada</option>")
+document.write ("    <option value=\"RNG\">RNG</option>")
+document.write ("    <option value=\"IMC\">IMC</option>")
+document.write ("<option value=\"Escolha Aqui\"selected>Escolha Aqui</option>")
+document.write ("</select>")
+
+
+document.write ("<b><h2>Selecione o usuário:</h2></b>")
+document.write ("<select id=\"senha2\" name=\"senha2\">")
+document.write ("<option value=\"Lucas\">Lucas</option>")
+document.write ("<option value=\"User2\">Outro usuário</option>")
+document.write ("<option value=\"Escolha Aqui\"selected>Escolha Aqui</option>")
+document.write ("</select>  ")
+
+document.write ("<input id=\"textinput\">")
+document.write("<br><br>")
+document.write ("<button onclick=\"enviar2()\">Mandar</button>")
+
+
+function enviar2 (){
+	const select =document.querySelector("#escolher	")
+	var valor2 = select.value
+
+	if (valor2 == "tabuada")
+		y = "tabuadaref.html"
+	else if (valor2 == "IMC")
+		y = "IMC.html"
+	else if (valor2 == "RNG")
+		y = "RNG.html"
+
+	const select2 =document.querySelector("#senha2")
+	var valor = select2.value
+
+	var senha = 1
+	var SenhaLucas = 1
+	var SenhaOutro = 1
+
+
+	if (valor == "Lucas")
+		senha = "SenhaLucas"
+	
+	else if (valor == "User2")
+		senha = "SenhaOutro"
+	
+	if (senha == document.getElementById("textinput").value){
+		window.location.href = y
+	}
+	else {
+		alert ("Errou!")
+    	x++
+	}
+	if (x>3){
+		document.write("<h1><b>Sumiu?</b></h1>")	
+	}
+}
+</script>
